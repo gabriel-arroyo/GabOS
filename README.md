@@ -1,13 +1,15 @@
-# Luke's Auto-Rice Bootstraping Scripts (LARBS)
+# Gabo's auto bootstrapping Operating System (GabOS)
 
+## What is GabOS?
+
+It's just a fork of Luke Smith's LARBS but with my own config files and install methods. Some functions are converted into separate scripts.
 
 ## Installation:
 
-On an Arch based distribution as root, run the following:
+On an Arch based distribution as root, clone this git and run the following:
 
 ```
-curl -LO larbs.xyz/larbs.sh
-sh larbs.sh
+sh gabos.sh
 ```
 
 That's it.
