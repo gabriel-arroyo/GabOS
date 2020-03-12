@@ -29,4 +29,13 @@ refreshkeys() { \
         pacman --noconfirm -Sy archlinux-keyring >/dev/null 2>&1
         }
 
+systembeepoff() { dialog --infobox "Getting rid of that retarded error beep sound..." 10 50
+        rmmod pcspkr
+        echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf ;}
+
+finalize(){ \
+        dialog --infobox "Preparing welcome message..." 4 50
+        echo "exec_always --no-startup-id notify-send -i ~/.local/share/larbs/larbs.png 'Welcome to LARBS:' 'Press Super+F1 for the manual.' -t 10000"  >> "/home/$name/.config/i3/config"
+        dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment (it will start automatically in tty1).\\n\\n.t Luke" 12 80
+        }
 
